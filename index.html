@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Ahmed Ibrahim | Humanitarian Leader & Program Manager</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #0d9488;
+      --accent: #2563eb;
+      --dark: #0f172a;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif; background-color: var(--light-bg); color: var(--text-main); line-height: 1.7; transition: all 0.3s ease; }
+
+    /* Top Utility Bar */
+    .top-bar { background: #0f172a; padding: 10px 20px; display: flex; justify-content: flex-end; align-items: center; }
+    .lang-btn { background: #2563eb; color: #ffffff; border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; cursor: pointer; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+    .lang-btn:hover { background: #1d4ed8; }
+
+    /* Header & Hero */
+    header { background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 50px 20px; text-align: center; }
+    .hero { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+    .profile-img { width: 155px; height: 155px; border-radius: 50%; object-fit: cover; border: 4px solid #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.25); margin-bottom: 18px; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 6px; }
+    .hero .title { font-size: 1.05rem; color: #93c5fd; font-weight: 600; margin-bottom: 22px; max-width: 700px; }
+    
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.2s; }
+    .btn-wa { background-color: #25D366; color: white; }
+    .btn-mail { background-color: white; color: var(--primary); }
+    .btn-call { background-color: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); }
+    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    .container { max-width: 950px; margin: 35px auto; padding: 0 20px; }
+    .section-title { font-size: 1.35rem; color: var(--primary); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; border-left: 4px solid var(--secondary); padding-left: 12px; }
+    [dir="rtl"] .section-title { border-left: none; border-right: 4px solid var(--secondary); padding-left: 0; padding-right: 12px; }
+    
+    .card { background: var(--card-bg); border-radius: 12px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 2px 5px rgba(0,0,0,0.03); margin-bottom: 24px; }
+    
+    .exp-item { border-left: 2px solid var(--secondary); padding-left: 16px; margin-bottom: 22px; position: relative; }
+    [dir="rtl"] .exp-item { border-left: none; border-right: 2px solid var(--secondary); padding-left: 0; padding-right: 16px; }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-title { font-size: 1.05rem; font-weight: 700; color: var(--dark); }
+    .exp-org { font-weight: 600; color: var(--accent); font-size: 0.95rem; }
+    .exp-date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
+    
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .feature-box { background: #f8fafc; border: 1px solid var(--border); padding: 16px; border-radius: 8px; border-left: 3px solid var(--primary); }
+    [dir="rtl"] .feature-box { border-left: 1px solid var(--border); border-right: 3px solid var(--primary); }
+    .feature-box strong { display: block; color: var(--dark); margin-bottom: 5px; font-size: 0.95rem; }
+    .feature-box p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+    .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag { background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+    .tag-highlight { background: #fef3c7; color: #92400e; }
+
+    footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 30px 20px; font-size: 0.85rem; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+  <!-- Language Switcher Bar -->
+  <div class="top-bar">
+    <button class="lang-btn" onclick="toggleLanguage()">
+      🌐 <span id="langBtnText">العربية</span>
+    </button>
+  </div>
+
+  <!-- Hero Header -->
+  <header>
+    <div class="hero">
+      <img src="profile.jpg" alt="Mohamed Ahmed Ibrahim" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Mohamed+Ahmed&size=160&background=1e3a8a&color=fff'">
+      <h1 id="heroName">Mohamed Ahmed Ibrahim</h1>
+      <div class="title" id="heroTitle">Head of Office | Humanitarian & Development Program Manager | Proposal & Budget Specialist</div>
+      
+      <div class="cta-btns">
+        <a href="https://wa.me/256703727040" target="_blank" class="btn btn-wa" id="btnWa">💬 WhatsApp</a>
+        <a href="mailto:mhmdahmdabrahymalhkym@gmail.com" class="btn btn-mail" id="btnMail">✉️ Email Me</a>
+        <a href="tel:+249113494546" class="btn btn-call" id="btnCall">📞 Call Direct</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- Executive Profile -->
+    <div class="card">
+      <h2 class="section-title" id="secAboutTitle">Professional Summary</h2>
+      <p id="secAboutBody">
+        A highly accomplished Humanitarian Leader and Healthcare Professional seamlessly bridging the gap between clinical expertise, administrative governance, and program design. Over 4 years of solid experience in directing field operations, developing high-impact humanitarian interventions, writing comprehensive project proposals, and structuring detailed operational and grant budgets. Highly adept at hybrid coordination, PM4NGOs standards, MEAL frameworks, and PSEA compliance across diverse emergency and community contexts.
+      </p>
+      <div class="tag-container" id="secAboutTags">
+        <span class="tag">📍 East Darfur, Ed Daein, Sudan</span>
+        <span class="tag tag-highlight">📝 Project Proposal Writing & Design</span>
+        <span class="tag tag-highlight">📊 Budget Formulation & Financial Planning</span>
+        <span class="tag">🌐 Fluent English & Arabic</span>
+      </div>
+    </div>
+
+    <!-- Core Competencies: Proposals & Budgets Focus -->
+    <div class="card">
+      <h2 class="section-title" id="secCompetenciesTitle">Key Expertise & Program Capabilities</h2>
+      <div class="grid-2">
+        <div class="feature-box">
+          <strong id="comp1Title">Proposal Writing & Grant Design</strong>
+          <p id="comp1Desc">Designing evidence-based humanitarian and development proposals (OCHA, UN agencies, international donors), conducting rapid needs assessments, developing Theory of Change, and logical frameworks (LogFrames).</p>
+        </div>
+        <div class="feature-box">
+          <strong id="comp2Title">Budget Development & Financial Oversight</strong>
+          <p id="comp2Desc">Developing activity-based and operational project budgets, cost forecasting, budget variance tracking, and ensuring full donor compliance with transparent resource allocation.</p>
+        </div>
+        <div class="feature-box">
+          <strong id="comp3Title">Field Operations & Hybrid Coordination</strong>
+          <p id="comp3Desc">Directing field office setups, leading high-level coordination meetings with local authorities and sector clusters, and managing cross-functional remote/field teams.</p>
+        </div>
+        <div class="feature-box">
+          <strong id="comp4Title">MEAL & Digital Data Systems</strong>
+          <p id="comp4Desc">Deploying mobile data collection platforms (KoBoToolbox, ActivityInfo), building indicator tracking matrices (ITTs), and implementing continuous field monitoring systems.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="card">
+      <h2 class="section-title" id="secExpTitle">Professional Experience</h2>
+      
+      <div class="exp-item">
+        <div class="exp-title" id="exp1Title">Head of Office / Field Manager</div>
+        <div class="exp-org">Sudan Assist for Development Organization (SADO) | North Darfur</div>
+        <div class="exp-date" id="exp1Date">Present</div>
+        <p id="exp1Desc">Direct institutional and field operations across North Darfur. Lead program design, multi-sector proposal conceptualization, and resource allocation. Facilitate high-level online and field coordination meetings with humanitarian clusters and local authorities.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title" id="exp2Title">Project Coordinator</div>
+        <div class="exp-org">CDPO Organization</div>
+        <div class="exp-date" id="exp2Date">Present</div>
+        <p id="exp2Desc">Coordinate hybrid project lifecycles, execute field logistics, and align community needs with donor targets. Assist in drafting concept notes, budget plans, and progress tracking matrices.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title" id="exp3Title">Founder, General Manager & Program Lead</div>
+        <div class="exp-org">ROCO (Renaissance Of Our Country) Organisation</div>
+        <div class="exp-date" id="exp3Date">January 2023 - Present</div>
+        <p id="exp3Desc">Executive leadership overseeing community-led initiatives, participatory civic action, grant writing, volunteer team leadership, and designing training toolkits.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title" id="exp4Title">Project Coordinator</div>
+        <div class="exp-org">Humans Heal for Human Rights</div>
+        <div class="exp-date" id="exp4Date">January 2024 - Present</div>
+        <p id="exp4Desc">Facilitated community engagement, digital outreach, and cross-border program logistics for remote field interventions.</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title" id="exp5Title">Certified Medical & English Language Trainer</div>
+        <div class="exp-org">Multiple Training Centers (including Al-Tamayuz Center)</div>
+        <div class="exp-date" id="exp5Date">June 2023 - Present</div>
+        <p id="exp5Desc">Design and conduct training curricula on emergency healthcare education, medical terminology, and professional English proficiency via in-person and digital platforms (Thinkific, Google Sites).</p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title" id="exp6Title">Pharmacist & Health Program Support</div>
+        <div class="exp-org">World Vision International</div>
+        <div class="exp-date">February 2020 - December 2022</div>
+        <p id="exp6Desc">Managed health, pharmaceutical, and nutrition resources in alignment with global humanitarian quality and accountability standards.</p>
+      </div>
+    </div>
+
+    <!-- Education & Certifications -->
+    <div class="card">
+      <h2 class="section-title" id="secEduTitle">Education & Certified Qualifications</h2>
+      <div class="grid-2">
+        <div class="feature-box">
+          <strong id="edu1Title">Bachelor of Science in Nursing</strong>
+          <p id="edu1Desc">Undergraduate Degree</p>
+        </div>
+        <div class="feature-box">
+          <strong id="edu2Title">Medical Assistant Diploma</strong>
+          <p id="edu2Desc">2021 - 2025</p>
+        </div>
+        <div class="feature-box">
+          <strong id="edu3Title">Diploma in Business Administration</strong>
+          <p id="edu3Desc">Graduated 2024</p>
+        </div>
+        <div class="feature-box">
+          <strong id="edu4Title">Diploma in Public Health</strong>
+          <p id="edu4Desc">2021 - 2022</p>
+        </div>
+        <div class="feature-box">
+          <strong id="edu5Title">Diploma in Pharmacy</strong>
+          <p id="edu5Desc">2020 - 2022</p>
+        </div>
+        <div class="feature-box">
+          <strong id="edu6Title">Diploma in English Language</strong>
+          <p id="edu6Desc">2019 - 2023</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; margin: 20px 0 10px 0; color: var(--dark);" id="secCertSub">Key Professional Certifications:</h3>
+      <div class="tag-container">
+        <span class="tag">MEAL DPro Certified</span>
+        <span class="tag">Humanitarian Action (DisasterReady)</span>
+        <span class="tag">Training of Trainers (TOT)</span>
+        <span class="tag">Community-Based Management of Acute Malnutrition (CMAM)</span>
+        <span class="tag">KoBoToolbox & ActivityInfo</span>
+        <span class="tag">Cisco Data Analytics Essentials</span>
+        <span class="tag">BLS & ALS Medical Support</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footerCopy">© 2026 Mohamed Ahmed Ibrahim. All Rights Reserved.</p>
+    <p style="margin-top: 6px; font-size: 0.8rem; color: #64748b;">
+      East Darfur, Ed Daein, Sudan | Phone: +249 11 349 4546 | WhatsApp: +256 70 372 7040
+    </p>
+  </footer>
+
+  <!-- Bilingual Toggle Script -->
+  <script>
+    let currentLang = 'en';
+
+    const content = {
+      en: {
+        dir: 'ltr',
+        btnText: 'العربية',
+        name: 'Mohamed Ahmed Ibrahim',
+        title: 'Head of Office | Humanitarian & Development Program Manager | Proposal & Budget Specialist',
+        btnWa: '💬 WhatsApp',
+        btnMail: '✉️ Email Me',
+        btnCall: '📞 Call Direct',
+        aboutTitle: 'Professional Summary',
+        aboutBody: 'A highly accomplished Humanitarian Leader and Healthcare Professional seamlessly bridging the gap between clinical expertise, administrative governance, and program design. Over 4 years of solid experience in directing field operations, developing high-impact humanitarian interventions, writing comprehensive project proposals, and structuring detailed operational and grant budgets. Highly adept at hybrid coordination, PM4NGOs standards, MEAL frameworks, and PSEA compliance across diverse emergency and community contexts.',
+        aboutTags: `
+          <span class="tag">📍 East Darfur, Ed Daein, Sudan</span>
+          <span class="tag tag-highlight">📝 Project Proposal Writing & Design</span>
+          <span class="tag tag-highlight">📊 Budget Formulation & Financial Planning</span>
+          <span class="tag">🌐 Fluent English & Arabic</span>
+        `,
+        compTitle: 'Key Expertise & Program Capabilities',
+        comp1T: 'Proposal Writing & Grant Design',
+        comp1D: 'Designing evidence-based humanitarian and development proposals (OCHA, UN agencies, international donors), conducting rapid needs assessments, developing Theory of Change, and logical frameworks (LogFrames).',
+        comp2T: 'Budget Development & Financial Oversight',
+        comp2D: 'Developing activity-based and operational project budgets, cost forecasting, budget variance tracking, and ensuring full donor compliance with transparent resource allocation.',
+        comp3T: 'Field Operations & Hybrid Coordination',
+        comp3D: 'Directing field office setups, leading high-level coordination meetings with local authorities and sector clusters, and managing cross-functional remote/field teams.',
+        comp4T: 'MEAL & Digital Data Systems',
+        comp4D: 'Deploying mobile data collection platforms (KoBoToolbox, ActivityInfo), building indicator tracking matrices (ITTs), and implementing continuous field monitoring systems.',
+        expTitle: 'Professional Experience',
+        exp1T: 'Head of Office / Field Manager',
+        exp1D: 'Present',
+        exp1Desc: 'Direct institutional and field operations across North Darfur. Lead program design, multi-sector proposal conceptualization, and resource allocation. Facilitate high-level online and field coordination meetings with humanitarian clusters and local authorities.',
+        exp2T: 'Project Coordinator',
+        exp2D: 'Present',
+        exp2Desc: 'Coordinate hybrid project lifecycles, execute field logistics, and align community needs with donor targets. Assist in drafting concept notes, budget plans, and progress tracking matrices.',
+        exp3T: 'Founder, General Manager & Program Lead',
+        exp3D: 'January 2023 - Present',
+        exp3Desc: 'Executive leadership overseeing community-led initiatives, participatory civic action, grant writing, volunteer team leadership, and designing training toolkits.',
+        exp4T: 'Project Coordinator',
+        exp4D: 'January 2024 - Present',
+        exp4Desc: 'Facilitated community engagement, digital outreach, and cross-border program logistics for remote field interventions.',
+        exp5T: 'Certified Medical & English Language Trainer',
+        exp5D: 'June 2023 - Present',
+        exp5Desc: 'Design and conduct training curricula on emergency healthcare education, medical terminology, and professional English proficiency via in-person and digital platforms (Thinkific, Google Sites).',
+        exp6Desc: 'Managed health, pharmaceutical, and nutrition resources in alignment with global humanitarian quality and accountability standards.',
+        eduTitle: 'Education & Certified Qualifications',
+        edu1T: 'Bachelor of Science in Nursing', edu1D: 'Undergraduate Degree',
+        edu2T: 'Medical Assistant Diploma', edu2D: '2021 - 2025',
+        edu3T: 'Diploma in Business Administration', edu3D: 'Graduated 2024',
+        edu4T: 'Diploma in Public Health', edu4D: '2021 - 2022',
+        edu5T: 'Diploma in Pharmacy', edu5D: '2020 - 2022',
+        edu6T: 'Diploma in English Language', edu6D: '2019 - 2023',
+        certSub: 'Key Professional Certifications:',
+        footer: '© 2026 Mohamed Ahmed Ibrahim. All Rights Reserved.'
+      },
+      ar: {
+        dir: 'rtl',
+        btnText: 'English',
+        name: 'محمد أحمد إبراهيم',
+        title: 'مدير مكتب | منسق برامج إنسانية وتنموية | أخصائي كتابة مقترحات المشاريع وإعداد الميزانيات',
+        btnWa: '💬 تواصل عبر واتساب',
+        btnMail: '✉️ مراسلة عبر البريد',
+        btnCall: '📞 اتصال هاتفي',
+        aboutTitle: 'النبذة المهنية والشخصية',
+        aboutBody: 'قيادي في العمل الإنساني وكادر صحي يجمع بكفاءة بين المعرفة الإكلينيكية والإدارة التنفيذية وتصميم البرامج التنموية. أمتلك خبرة تتجاوز 4 سنوات في توجيه العمليات الميدانية، وتطوير وتصميم مقترحات المشاريع الإنسانية والتنموية عالية الأثر، وصياغة الميزانيات التشغيلية والمالية بدقة وفق متطلبات المانحين. متمكن من التنسيق في بيئات العمل الهجينة (حضورياً وعبر الإنترنت)، وتطبيق معايير PM4NGOs، وأطر المتابعة والتقييم (MEAL)، ومعايير الحماية ومكافحة الاستغلال (PSEA).',
+        aboutTags: `
+          <span class="tag">📍 شرق دارفور - الضعين - السودان</span>
+          <span class="tag tag-highlight">📝 كتابة وتصميم مقترحات المشاريع</span>
+          <span class="tag tag-highlight">📊 إعداد الميزانيات والتخطيط المالي</span>
+          <span class="tag">🌐 إتقان تام: الإنجليزية والعربية</span>
+        `,
+        compTitle: 'الخبرات التخصصية والقدرات البرامجية',
+        comp1T: 'كتابة مقترحات المشاريع وتصميم المنح',
+        comp1D: 'صياغة مقترحات المشاريع الإنسانية القائمة على الأدلة (لمنظمات الأمم المتحدة، OCHA، والمانحين الدوليين)، وإجراء تقييمات الاحتياج السريعة وبناء نماذج التغيير والمصفوفات المنطقية (LogFrames).',
+        comp2T: 'إعداد الميزانيات والرقابة المالية',
+        comp2D: 'هيكلة الميزانيات التفصيلية القائمة على الأنشطة (Activity-Based Budgets)، وتوقع التكاليف ومطابقة الصرف مع معايير ومتطلبات المنظمات المانحة بدقة وشفافية.',
+        comp3T: 'العمليات الميدانية والتنسيق الهجين',
+        comp3D: 'تأسيس وتشغيل المكاتب الميدانية، وتيسير الاجتماعات التنسيقية رفيعة المستوى مع الكتل القطاعية والجهات الرسمية، وإدارة الفرق الميدانية وعن بعد.',
+        comp4T: 'المتابعة والتقييم والأنظمة الرقمية',
+        comp4D: 'توظيف منصات جمع البيانات الرقمية (KoBoToolbox, ActivityInfo)، وتطوير مصفوفات تتبع المؤشرات، وإدارة أنظمة المراقبة الميدانية المستمرة.',
+        expTitle: 'الخبرات المهنية والمناصب القيادية',
+        exp1T: 'مدير مكتب / مدير ميداني',
+        exp1D: 'الحالي',
+        exp1Desc: 'إدارة العمليات الإدارية والميدانية لمكتب شمال دارفور، وقيادة تصميم البرامج ومقترحات المشاريع متعددة القطاعات، وتيسير اجتماعات التنسيق مع المنظمات الدولية ووكالات الأمم المتحدة.',
+        exp2T: 'منسق مشاريع',
+        exp2D: 'الحالي',
+        exp2Desc: 'تنسيق مخرجات الأنشطة والمشاريع في بيئات العمل الهجينة، وإدارة الخدمات اللوجستية الميدانية، والمساهمة في كتابة الأوراق المفاهيمية وخطط الميزانيات.',
+        exp3T: 'المؤسس والمدير العام وقائد البرامج',
+        exp3D: 'يناير 2023 - الحالي',
+        exp3Desc: 'قيادة تنفيذية وإشراف إداري لتطوير المبادرات المجتمعية، وكتابة المنح، وإدارة ورش العمل التشاركية وفرق المتطوعين.',
+        exp4T: 'منسق مشاريع',
+        exp4D: 'يناير 2024 - الحالي',
+        exp4Desc: 'تيسير المشاركة المجتمعية، والتواصل الرقمي، وتنسيق العمليات اللوجستية للبرامج الميدانية.',
+        exp5T: 'مدرب معتمد للغة الإنجليزية والمجالات الطبية',
+        exp5D: 'يونيو 2023 - الحالي',
+        exp5Desc: 'تصميم وتنفيذ الحقائب التدريبية في مجالات الإسعافات والطوارئ والمصطلحات الطبية واللغة الإنجليزية وتطوير منصات التدريب عن بعد.',
+        exp6Desc: 'إدارة الموارد الصحية والدوائية والغذائية وتنسيقها وفق المعايير الإنسانية العالمية المعتمدة.',
+        eduTitle: 'المؤهلات العلمية والشهادات التخصصية',
+        edu1T: 'بكالوريوس علوم تمريض', edu1D: 'جامعي (قيد التخرج)',
+        edu2T: 'دبلوم مساعد طبي', edu2D: '2021 - 2025',
+        edu3T: 'دبلوم إدارة أعمال', edu3D: 'تخرج 2024',
+        edu4T: 'دبلوم صحة عامة', edu4D: '2021 - 2022',
+        edu5T: 'دبلوم صيدلة', edu5D: '2020 - 2022',
+        edu6T: 'دبلوم اللغة الإنجليزية', edu6D: '2019 - 2023',
+        certSub: 'أبرز الشهادات المهنية المعتمدة:',
+        footer: '© 2026 محمد أحمد إبراهيم. جميع الحقوق محفوظة.'
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      const t = content[currentLang];
+
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = t.dir;
+
+      document.getElementById('langBtnText').innerText = t.btnText;
+      document.getElementById('heroName').innerText = t.name;
+      document.getElementById('heroTitle').innerText = t.title;
+      document.getElementById('btnWa').innerText = t.btnWa;
+      document.getElementById('btnMail').innerText = t.btnMail;
+      document.getElementById('btnCall').innerText = t.btnCall;
+
+      document.getElementById('secAboutTitle').innerText = t.aboutTitle;
+      document.getElementById('secAboutBody').innerText = t.aboutBody;
+      document.getElementById('secAboutTags').innerHTML = t.aboutTags;
+
+      document.getElementById('secCompetenciesTitle').innerText = t.compTitle;
+      document.getElementById('comp1Title').innerText = t.comp1T;
+      document.getElementById('comp1Desc').innerText = t.comp1D;
+      document.getElementById('comp2Title').innerText = t.comp2T;
+      document.getElementById('comp2Desc').innerText = t.comp2D;
+      document.getElementById('comp3Title').innerText = t.comp3T;
+      document.getElementById('comp3Desc').innerText = t.comp3D;
+      document.getElementById('comp4Title').innerText = t.comp4T;
+      document.getElementById('comp4Desc').innerText = t.comp4D;
+
+      document.getElementById('secExpTitle').innerText = t.expTitle;
+      document.getElementById('exp1Title').innerText = t.exp1T;
+      document.getElementById('exp1Date').innerText = t.exp1D;
+      document.getElementById('exp1Desc').innerText = t.exp1Desc;
+      document.getElementById('exp2Title').innerText = t.exp2T;
+      document.getElementById('exp2Date').innerText = t.exp2D;
+      document.getElementById('exp2Desc').innerText = t.exp2Desc;
+      document.getElementById('exp3Title').innerText = t.exp3T;
+      document.getElementById('exp3Date').innerText = t.exp3D;
+      document.getElementById('exp3Desc').innerText = t.exp3Desc;
+      document.getElementById('exp4Title').innerText = t.exp4T;
+      document.getElementById('exp4Date').innerText = t.exp4D;
+      document.getElementById('exp4Desc').innerText = t.exp4Desc;
+      document.getElementById('exp5Title').innerText = t.exp5T;
+      document.getElementById('exp5Date').innerText = t.exp5D;
+      document.getElementById('exp5Desc').innerText = t.exp5Desc;
+
+      document.getElementById('secEduTitle').innerText = t.eduTitle;
+      document.getElementById('edu1Title').innerText = t.edu1T; document.getElementById('edu1Desc').innerText = t.edu1D;
+      document.getElementById('edu2Title').innerText = t.edu2T; document.getElementById('edu2Desc').innerText = t.edu2D;
+      document.getElementById('edu3Title').innerText = t.edu3T; document.getElementById('edu3Desc').innerText = t.edu3D;
+      document.getElementById('edu4Title').innerText = t.edu4T; document.getElementById('edu4Desc').innerText = t.edu4D;
+      document.getElementById('edu5Title').innerText = t.edu5T; document.getElementById('edu5Desc').innerText = t.edu5D;
+      document.getElementById('edu6Title').innerText = t.edu6T; document.getElementById('edu6Desc').innerText = t.edu6D;
+      document.getElementById('secCertSub').innerText = t.certSub;
+
+      document.getElementById('footerCopy').innerText = t.footer;
+    }
+  </script>
+</body>
+</html>
